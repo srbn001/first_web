@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Sikkim - Maps & Guides</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: #ff7e5f;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .map-header {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        
+        #google-map {
+            height: 450px;
+            width: 100%;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-img {
+            height: 200px;
+            width: 100%;
+            background-color: #4a6491;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+        }
+        
+        .gallery-img::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        }
+        
+        .gallery-title {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .info-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .info-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ff7e5f;
+            display: inline-block;
+        }
+        
+        .info-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .info-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4a6491;
+        }
+        
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-card h3 i {
+            color: #ff7e5f;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: #feb47b;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #ff7e5f;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-mountain"></i>
+            <div>
+                <h1>Explore Sikkim</h1>
+                <p class="subtitle">Maps & Travel Guides</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="map-container">
+                <div class="map-header">
+                    <i class="fas fa-map-marked-alt"></i> Interactive Map of Sikkim
+                </div>
+                <div id="google-map"></div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-header">
+                    <i class="fas fa-info-circle"></i> About Sikkim
+                </div>
+                <div style="padding: 1.5rem;">
+                    <p>Sikkim is a state in northeastern India known for its biodiversity, alpine and subtropical climates, and stunning views of Kangchenjunga, the highest peak in India and third highest on Earth.</p>
+                    <br>
+                    <p><strong>Capital:</strong> Gangtok</p>
+                    <p><strong>Area:</strong> 7,096 km²</p>
+                    <p><strong>Population:</strong> 610,577</p>
+                    <br>
+                    <p>Sikkim is a popular tourist destination for its Buddhist monasteries, trekking routes, and pristine natural beauty.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 2rem; text-align: center; color: #2c3e50;">
+            <i class="fas fa-map"></i> Sikkim Maps Gallery
+        </h2>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <img src="map1.png" alt="Topography map" srcset="map01.webp 400w, map01.webp 800w, map01.webp 1200w" 
+                        sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px" >
+                </div>
+                <div class="gallery-title">Sikkim Topography</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <img src="map2.jpg" alt="Tourist map">
+                </div>
+                <div class="gallery-title">Tourist Map</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <img src="map11.jpg" alt="transport map">
+                </div>
+                <div class="gallery-title">Transportation Map</div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-img">
+                    <img src="map4.jpeg" alt="tracking map">
+                </div>
+                <div class="gallery-title">Adventure Map</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2><i class="fas fa-lightbulb"></i> Travel Information</h2>
+            <div class="info-content">
+                <div class="info-card">
+                    <h3><i class="fas fa-snowflake"></i> Best Time to Visit</h3>
+                    <p>The best time to visit Sikkim is between March and May, and from September to November. These months offer pleasant weather and clear views of the Himalayas.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-passport"></i> Permits</h3>
+                    <p>Foreign nationals require an Inner Line Permit (ILP) to visit Sikkim. Indian nationals need a Protected Area Permit (PAP) for certain restricted areas.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-hiking"></i> Popular Destinations</h3>
+                    <p>Gangtok, Nathula Pass, Tsomgo Lake, Pelling, Yuksom, Lachung, and Lachen are among the most popular destinations in Sikkim.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Explore the Beauty of Sikkim</h3>
+            <p>Plan your journey with our comprehensive maps and travel guides</p>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Maps</a>
+                <a href="#">Travel Guides</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="copyright">© 2023 Explore Sikkim. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Google Maps API -->
+    <script>
+        function initMap() {
+            // Sikkim coordinates
+            const sikkim = { lat: 27.5330, lng: 88.5122 };
+            
+            // Create map centered on Sikkim
+            const map = new google.maps.Map(document.getElementById("google-map"), {
+                zoom: 9,
+                center: sikkim,
+                mapTypeId: google.maps.MapTypeId.TERRAIN,
+                styles: [
+                    {
+                        "featureType": "administrative",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#444444"}]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "all",
+                        "stylers": [{"color": "#f2f2f2"}]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": [{"visibility": "off"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "all",
+                        "stylers": [{"saturation": -100}, {"lightness": 45}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "all",
+                        "stylers": [{"visibility": "simplified"}]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "labels.icon",
+                        "stylers": [{"visibility": "off"}]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [{"visibility": "off"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [{"color": "#4a6491"}, {"visibility": "on"}]
+                    }
+                ]
+            });
+            
+            // Add marker for Gangtok
+            new google.maps.Marker({
+                position: { lat: 27.3389, lng: 88.6065 },
+                map: map,
+                title: "Gangtok",
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                }
+            });
+            
+            // Add marker for Pelling
+            new google.maps.Marker({
+                position: { lat: 27.3212, lng: 88.2383 },
+                map: map,
+                title: "Pelling",
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                }
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC9whQYb1wKQpRVs5KuGaI4GyZ4_GQAqE&callback=initMap">
+    </script>
+    <script src="new_nav.js">navigation</script>
+</body>
+</html>

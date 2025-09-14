@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim Climate & Travel Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1a237e, #283593);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .weather-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .current-weather {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .weather-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .weather-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        
+        .weather-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .preparation-guide {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+        
+        h3 {
+            color: #283593;
+            margin: 15px 0;
+        }
+        
+        .temp {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #1a237e;
+            margin: 15px 0;
+        }
+        
+        .weather-icon {
+            font-size: 4rem;
+            color: #42a5f5;
+            margin: 15px 0;
+        }
+        
+        .detail-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #283593;
+            margin: 10px 0;
+        }
+        
+        .detail-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .prep-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .prep-list li {
+            background: #e3f2fd;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #283593;
+        }
+        
+        .alert {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #c62828;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .weather-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .weather-details {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .weather-details {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .temp {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Sikkim Climate Conditions</h1>
+            <p>Current weather and important information for travelers</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="weather-container">
+            <div class="current-weather">
+                <h2>Current Weather in Gangtok</h2>
+                <div class="weather-icon">
+                    <i class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="temp">18°C</div>
+                <p>Partly cloudy with occasional showers</p>
+                
+                <div class="weather-details">
+                    <div class="weather-card">
+                        <div class="detail-label">FEELS LIKE</div>
+                        <div class="detail-value">17°C</div>
+                    </div>
+                    <div class="weather-card">
+                        <div class="detail-label">HUMIDITY</div>
+                        <div class="detail-value">78%</div>
+                    </div>
+                    <div class="weather-card">
+                        <div class="detail-label">WIND</div>
+                        <div class="detail-value">12 km/h</div>
+                    </div>
+                    <div class="weather-card">
+                        <div class="detail-label">PRESSURE</div>
+                        <div class="detail-value">1014 hPa</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="current-weather">
+                <h2>Weather Forecast</h2>
+                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                    <div style="text-align: center; flex: 1;">
+                        <div>Today</div>
+                        <div style="font-size: 2rem; color: #283593; margin: 10px 0;">18°C</div>
+                        <div><i class="fas fa-cloud-sun" style="color: #42a5f5;"></i></div>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div>Tomorrow</div>
+                        <div style="font-size: 2rem; color: #283593; margin: 10px 0;">16°C</div>
+                        <div><i class="fas fa-cloud-rain" style="color: #42a5f5;"></i></div>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div>Wed</div>
+                        <div style="font-size: 2rem; color: #283593; margin: 10px 0;">15°C</div>
+                        <div><i class="fas fa-cloud" style="color: #42a5f5;"></i></div>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div>Thu</div>
+                        <div style="font-size: 2rem; color: #283593; margin: 10px 0;">17°C</div>
+                        <div><i class="fas fa-sun" style="color: #ffb300;"></i></div>
+                    </div>
+                </div>
+                
+                <div class="alert">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <strong>Weather Alert:</strong> Isolated thunderstorms expected in higher elevations tomorrow afternoon.
+                </div>
+            </div>
+        </div>
+        
+        <div class="preparation-guide">
+            <h2>Preparing for Your Sikkim Visit</h2>
+            <p>Sikkim's climate varies significantly with altitude. Here's how to prepare for a comfortable visit:</p>
+            
+            <h3>Clothing Recommendations</h3>
+            <ul class="prep-list">
+                <li><strong>Layered clothing</strong> is essential due to temperature variations throughout the day</li>
+                <li>Pack <strong>thermal wear</strong> if visiting between November and February</li>
+                <li>Always carry a <strong>waterproof jacket</strong> or umbrella, as rain can occur unexpectedly</li>
+                <li>Comfortable <strong>walking shoes</strong> with good grip for hilly terrain</li>
+                <li><strong>Warm hat and gloves</strong> for higher altitude areas like Nathu La Pass</li>
+            </ul>
+            
+            <h3>Health Precautions</h3>
+            <ul class="prep-list">
+                <li>Carry <strong>medication for altitude sickness</strong> if visiting areas above 3,000 meters</li>
+                <li>Stay hydrated to combat both altitude effects and humidity</li>
+                <li>Use <strong>sunscreen</strong> with high SPF as UV radiation can be strong at high altitudes</li>
+                <li>Pack a basic <strong>first-aid kit</strong> including motion sickness medication for winding mountain roads</li>
+            </ul>
+            
+            <h3>Travel Essentials</h3>
+            <ul class="prep-list">
+                <li>Carry <strong>valid ID documents</strong> as permits are required for many areas in Sikkim</li>
+                <li>Keep <strong>cash</strong> as ATMs may be limited in remote areas</li>
+                <li>Portable <strong>power bank</strong> for your devices as power outages can occur</li>
+                <li><strong>Snacks and water</strong> for long journeys between destinations</li>
+            </ul>
+            
+            <h3>Seasonal Considerations</h3>
+            <ul class="prep-list">
+                <li><strong>Spring (March-May):</strong> Pleasant weather but can be unpredictable. Pack layers.</li>
+                <li><strong>Summer (June-August):</strong> Monsoon season. Waterproof gear is essential.</li>
+                <li><strong>Autumn (September-November):</strong> Best time to visit. Clear skies and comfortable temperatures.</li>
+                <li><strong>Winter (December-February):</strong> Very cold, especially at night. Heavy woolens needed.</li>
+            </ul>
+            
+            <div class="alert">
+                <i class="fas fa-info-circle"></i>
+                <strong>Important:</strong> Some areas of Sikkim require special permits for tourists. Check current regulations before your visit.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Sikkim Travel Information | Data updated regularly</p>
+            <p>Note: Weather information is for general guidance only. Always check current conditions before travel.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to update the temperature and conditions (would be replaced with real API calls)
+        function updateWeather() {
+            const tempElement = document.querySelector('.temp');
+            const iconElement = document.querySelector('.weather-icon');
+            
+            // Simulate slight temperature changes
+            const currentTemp = parseInt(tempElement.textContent);
+            const randomChange = Math.floor(Math.random() * 3) - 1; // -1, 0, or 1
+            const newTemp = currentTemp + randomChange;
+            
+            tempElement.textContent = newTemp + '°C';
+            
+            // Simulate icon change based on temperature
+            if (newTemp >= 20) {
+                iconElement.innerHTML = '<i class="fas fa-sun"></i>';
+            } else if (newTemp >= 15) {
+                iconElement.innerHTML = '<i class="fas fa-cloud-sun"></i>';
+            } else {
+                iconElement.innerHTML = '<i class="fas fa-cloud"></i>';
+            }
+        }
+        
+        // Update weather every minute (simulated)
+        setInterval(updateWeather, 60000);
+    </script>
+    <script src="new_nav.js"></script>
+</body>
+</html>

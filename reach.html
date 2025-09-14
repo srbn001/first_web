@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Reach Sikkim - Travel Guide</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Variables */
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3a1;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --spacing: 1rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            padding-bottom: 2rem;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+            color: var(--dark-bg);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+        }
+        
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+        
+        /* Main Content */
+        .blog-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .meta {
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+        }
+        
+        .toc ul {
+            list-style: none;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #6a93cb 0%, #a4bfef 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* Transport Cards */
+        .transport-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .transport-card {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .transport-card h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .transport-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Tips Section */
+        .tips {
+            background-color: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .tips h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            :root {
+                --spacing: 0.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .blog-content {
+                padding: 1.5rem;
+            }
+            
+            .transport-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-placeholder, .featured-image {
+                height: 250px;
+            }
+        }
+        
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dark-bg);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            --text-color: #e6e6e6;
+            --light-bg: #121212;
+            --dark-bg: #1e1e1e;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+        
+        body.dark-mode .blog-content {
+            background-color: var(--dark-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+        
+        body.dark-mode h1, 
+        body.dark-mode h2, 
+        body.dark-mode h3, 
+        body.dark-mode h4 {
+            color: #ffffff;
+        }
+        
+        body.dark-mode .toc {
+            background-color: #2d2d2d;
+        }
+        
+        body.dark-mode .transport-card {
+            background-color: #2d2d2d;
+        }
+        
+        body.dark-mode .tips {
+            background-color: #2d3a3d;
+        }
+        
+        body.dark-mode .image-placeholder {
+            background: linear-gradient(135deg, #3a5f7e 0%, #1e3a5f 100%);
+        }
+        
+        /* Reading Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--accent-color);
+            width: 0%;
+        }
+        
+        /* List styles */
+        ul:not(.nav-links):not(.dropdown-menu) {
+            margin-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        ul:not(.nav-links):not(.dropdown-menu) li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+    
+    <main class="container">
+        <!-- Featured Image -->
+        <div class="image-placeholder">
+            <!-- Beautiful Sikkim Landscape (Image: M03_01.png) -->
+            <img src="main.webp"  height="480" width="1200" alt="sikkim">
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#section1">Introduction to Sikkim</a></li>
+                <li><a href="#section2">By Air: Reaching Sikkim by Flight</a></li>
+                <li><a href="#section3">By Train: Railway Connections to Sikkim</a></li>
+                <li><a href="#section4">By Road: Bus and Taxi Options</a></li>
+                <li><a href="#section5">International Travelers: Reaching from Abroad</a></li>
+                <li><a href="#section6">Permits and Documentation</a></li>
+                <li><a href="#section7">Best Time to Visit Sikkim</a></li>
+                <li><a href="#section8">Final Travel Tips</a></li>
+            </ul>
+        </div>
+        
+        <!-- Blog Content -->
+        <article class="blog-content">
+            <h1>How to Reach Sikkim: A Complete Transportation Guide</h1>
+            <p class="meta">Published on August 28, 2023 by Travel Guide Team • 12 min read</p>
+            
+            <h2 id="section1">Introduction to Sikkim</h2>
+            <p>Sikkim, nestled in the Himalayas between Nepal, Bhutan, and Tibet, is a paradise for nature lovers and adventure seekers. Known for its breathtaking landscapes, Buddhist monasteries, and vibrant culture, reaching this northeastern Indian state requires some planning due to its mountainous terrain.</p>
+            <p>This comprehensive guide will help you navigate the various transportation options to reach Sikkim from different parts of India and the world, ensuring your journey is as smooth as the serene landscapes you're about to experience.</p>
+            
+            <h2 id="section2">By Air: Reaching Sikkim by Flight</h2>
+            <p>The fastest way to reach Sikkim is by air. The state has its own airport, Pakyong Airport (PYG), located about 30 km from Gangtok. However, flight options are limited, and many travelers prefer to fly to Bagdogra Airport (IXB) in West Bengal, which is well-connected to major Indian cities.</p>
+            
+            <div class="transport-cards">
+                <div class="transport-card">
+                    <h3><span class="transport-icon">✈️</span> To Pakyong Airport</h3>
+                    <p><strong>Direct flights available from:</strong></p>
+                    <ul>
+                        <li>Kolkata (1.5 hours)</li>
+                        <li>Delhi (2.5 hours, with stopovers)</li>
+                        <li>Guwahati (1 hour)</li>
+                    </ul>
+                    <p>From Pakyong, it's about 1 hour by taxi to Gangtok (approx. ₹1500-2000).</p>
+                </div>
+                
+                <div class="transport-card">
+                    <h3><span class="transport-icon">✈️</span> To Bagdogra Airport</h3>
+                    <p><strong>Well-connected to major cities:</strong></p>
+                    <ul>
+                        <li>Delhi (2 hours direct flight)</li>
+                        <li>Kolkata (1 hour direct flight)</li>
+                        <li>Mumbai (2.5 hours with stopovers)</li>
+                        <li>Bangalore (2.5 hours with stopovers)</li>
+                    </ul>
+                    <p>From Bagdogra, it's about 4-5 hours by road to Gangtok (approx. ₹3000-4000 by taxi).</p>
+                </div>
+            </div>
+            
+            <div class="tips">
+                <h3>Pro Tip</h3>
+                <p>Book flights to Bagdogra instead of Pakyong for better connectivity and more options. Shared taxis and buses are available from Bagdogra to Sikkim at lower costs than private taxis.</p>
+            </div>
+            
+            <h2 id="section3">By Train: Railway Connections to Sikkim</h2>
+            <p>Sikkim currently has limited railway connectivity. The nearest major railway stations are in New Jalpaiguri (NJP) and Siliguri in West Bengal, which are well-connected to major cities across India.</p>
+            
+            <div class="transport-cards">
+                <div class="transport-card">
+                    <h3><span class="transport-icon">🚆</span> New Jalpaiguri (NJP)</h3>
+                    <p><strong>Major trains connecting to NJP:</strong></p>
+                    <ul>
+                        <li>Darjeeling Mail from Kolkata</li>
+                        <li>North East Express from Delhi</li>
+                        <li>Sikkim Mahananda Express from Bangalore</li>
+                        <li>Padatik Express from Kolkata</li>
+                    </ul>
+                    <p>From NJP, it's about 4-5 hours to Gangtok by road (approx. ₹3000 by taxi).</p>
+                </div>
+                
+                <div class="transport-card">
+                    <h3><span class="transport-icon">🚆</span> Future Connectivity</h3>
+                    <p>The Sivok-Rangpo railway project is underway, which will connect Sikkim directly to the Indian railway network. Until completion, NJP remains the most convenient railhead for Sikkim.</p>
+                    <p>Regular shared jeeps and buses operate from NJP to Gangtok, costing approximately ₹250-300 per person.</p>
+                </div>
+            </div>
+            
+            <h2 id="section4">By Road: Bus and Taxi Options</h2>
+            <p>Sikkim is well-connected by road to neighboring states. The journey through mountainous roads offers spectacular views but can be challenging for those prone to motion sickness.</p>
+            
+            <div class="transport-cards">
+                <div class="transport-card">
+                    <h3><span class="transport-icon">🚌</span> Bus Services</h3>
+                    <p><strong>From Siliguri:</strong> Regular buses depart from Siliguri Bus Terminal to Gangtok (5-6 hours, ₹250-300).</p>
+                    <p><strong>From Kolkata:</strong> Overnight buses available (18-20 hours, ₹1000-1500).</p>
+                    <p><strong>From Darjeeling:</strong> Frequent shared jeeps and buses (4 hours, ₹200-250).</p>
+                </div>
+                
+                <div class="transport-card">
+                    <h3><span class="transport-icon">🚗</span> Taxi Services</h3>
+                    <p><strong>From NJP/Bagdogra:</strong> Pre-paid taxis available (4-5 hours, ₹3000-4000 for entire vehicle).</p>
+                    <p><strong>Shared Jeeps:</strong> Cost-effective option (₹250-300 per person).</p>
+                    <p><strong>Self-drive:</strong> Rental cars available but challenging mountain driving requires experience.</p>
+                </div>
+            </div>
+            
+            <div class="tips">
+                <h3>Travel Advisory</h3>
+                <p>The roads to Sikkim can be affected during monsoon season (June-September) due to landslides. Always check road conditions before traveling during this period and consider travel insurance.</p>
+            </div>
+            
+            <h2 id="section5">International Travelers: Reaching from Abroad</h2>
+            <p>For international travelers, reaching Sikkim typically involves flying into a major Indian airport first, then taking a domestic connection to Bagdogra or Pakyong.</p>
+            
+            <div class="transport-cards">
+                <div class="transport-card">
+                    <h3><span class="transport-icon">🌏</span> From Europe/North America</h3>
+                    <p><strong>Route 1:</strong> Fly to Delhi International Airport (DEL), then domestic flight to Bagdogra (IXB).</p>
+                    <p><strong>Route 2:</strong> Fly to Kolkata International Airport (CCU), then domestic flight to Bagdogra.</p>
+                    <p>Allow at least 3-4 hours between international and domestic flights for immigration and baggage transfer.</p>
+                </div>
+                
+                <div class="transport-card">
+                    <h3><span class="transport-icon">🌏</span> From Southeast Asia</h3>
+                    <p><strong>From Bangkok:</strong> Direct flights to Kolkata or Delhi, then domestic connection.</p>
+                    <p><strong>From Singapore:</strong> Direct flights to Kolkata or Delhi available.</p>
+                    <p><strong>From Dhaka:</strong> Direct flights to Kolkata, then train or flight to Bagdogra.</p>
+                </div>
+            </div>
+            
+            <h2 id="section6">Permits and Documentation</h2>
+            <p>Foreign nationals require permits to visit Sikkim, including Protected Area Permit (PAP) for certain restricted areas. Indian citizens do not need permits for most areas but require Inner Line Permit for certain border regions.</p>
+            
+            <div class="tips">
+                <h3>Permit Information</h3>
+                <p><strong>Foreign Nationals:</strong> Obtain permits through registered tour operators in India. Bring passport copies and photos.</p>
+                <p><strong>Indian Citizens:</strong> ILP can be obtained at Sikkim border checkpoints or in Gangtok with ID proof and photos.</p>
+                <p>Some areas like Nathu La Pass require additional permits arranged through tour operators.</p>
+            </div>
+            
+            <h2 id="section7">Best Time to Visit Sikkim</h2>
+            <p>The ideal time to visit Sikkim depends on your preferences:</p>
+            
+            <div class="transport-cards">
+                <div class="transport-card">
+                    <h3><span class="transport-icon">🌸</span> March to May (Spring)</h3>
+                    <p>Pleasant weather, blooming rhododendrons, clear mountain views. Ideal for sightseeing and trekking.</p>
+                    <p><strong>Temperature:</strong> 10°C to 25°C</p>
+                </div>
+                
+                <div class="transport-card">
+                    <h3><span class="transport-icon">☀️</span> October to November (Autumn)</h3>
+                    <p>Post-monsoon clarity, festival season (Diwali), excellent mountain visibility. Best for photography.</p>
+                    <p><strong>Temperature:</strong> 5°C to 20°C</p>
+                </div>
+                
+                <div class="transport-card">
+                    <h3><span class="transport-icon">❄️</span> December to February (Winter)</h3>
+                    <p>Snowfall in higher altitudes, fewer tourists, but some passes may be closed. Good for snow experiences.</p>
+                    <p><strong>Temperature:</strong> -5°C to 15°C</p>
+                </div>
+            </div>
+            
+            <p>Monsoon season (June-September) is challenging due to heavy rains and possible landslides, though the landscape is lush green.</p>
+            
+            <h2 id="section8">Final Travel Tips</h2>
+            <p>To make your journey to Sikkim as enjoyable as possible, keep these tips in mind:</p>
+            
+            <div class="tips">
+                <h3>Essential Tips for Sikkim Travel</h3>
+                <ul>
+                    <li>Carry cash as ATMs may be limited in remote areas</li>
+                    <li>Pack warm clothing regardless of season—mountain weather is unpredictable</li>
+                    <li>Acclimatize properly to avoid altitude sickness in higher regions</li>
+                    <li>Keep necessary medications and first aid supplies</li>
+                    <li>Respect local customs and environment—Sikkim is an ecologically sensitive area</li>
+                    <li>Book accommodations in advance during peak season (April-June, October-November)</li>
+                    <li>Carry power banks as electricity can be intermittent in remote areas</li>
+                </ul>
+            </div>
+            
+            <p>Reaching Sikkim might require some effort, but the reward is an unforgettable experience in one of India's most beautiful and culturally rich states. Whether you choose to fly, take the train, or embark on a road journey, the stunning landscapes and warm hospitality of Sikkim will make every mile worthwhile.</p>
+            
+            <p>Safe travels and enjoy your adventure in the Himalayan paradise of Sikkim!</p>
+        </article>
+    </main>
+    
+    <footer class="container">
+        <p>&copy; 2023 Sikkim Travel Guide. All rights reserved.</p>
+    </footer>
+    
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+    
+    <!-- External Navigation Script -->
+    <script src="new_nav.js"></script>
+    
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                darkModeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'light');
+                darkModeToggle.textContent = '🌙';
+            }
+        });
+        
+        // Reading Progress Bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
+        
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL hash without jumping
+                history.pushState(null, null, targetId);
+            });
+        });
+    </script>
+
+</body>
+</html>

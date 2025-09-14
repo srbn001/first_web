@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Sikkim - Adventure, Culture & Nature</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Navigation Bar */
+        nav {
+            background: linear-gradient(90deg, #1b5e20 0%, #388e3c 100%);
+            padding: 15px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            width: 100%;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            color: #2e7d32;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #2e7d32;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .intro-text {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #444;
+        }
+        
+        /* Activities Section */
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .activity-content {
+            padding: 20px;
+        }
+        
+        .activity-content h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .activity-icon {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        
+        /* Tourist Destinations Carousel */
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 40px auto 60px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .carousel-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .carousel-caption h3 {
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .prev {
+            left: 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #1b5e20 0%, #388e3c 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons i {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .activities {
+                grid-template-columns: 1fr;
+            }
+            
+            .carousel-img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+     <script src="new_nav.js">navigation</script>
+    <!-- <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-mountain"></i>
+                <span>Incredible Sikkim</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Activities</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Adventure, Thrill & Sikkim</h1>
+        </div>
+        <img src="adv.webp" alt="Sikkim Landscape" class="hero-image">
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="section-title">Things to Do in Sikkim</h2>
+        <p class="intro-text">
+            Nestled in the Himalayas, Sikkim is a paradise for nature lovers, adventure seekers, and spiritual pilgrims. 
+            With its breathtaking landscapes, rich Buddhist culture, and pristine environment, Sikkim offers a unique blend 
+            of experiences. From the majestic Kanchenjunga to ancient monasteries, from thrilling treks to serene lakes, 
+            Sikkim is a destination that captivates every traveler's heart.
+        </p>
+
+        <!-- Activities Section -->
+        <h2 class="section-title">Explore Diverse Experiences</h2>
+        <div class="activities">
+            <div class="activity-card">
+                <div class="activity-content">
+                    <div class="activity-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Trekking & Hiking</h3>
+                    <p>Explore the Himalayan trails with breathtaking views of Kanchenjunga and lush valleys. Popular treks include Goecha La, Dzongri, and Green Lake.</p>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <div class="activity-content">
+                    <div class="activity-icon">
+                        <i class="fas fa-place-of-worship"></i>
+                    </div>
+                    <h3>Monasteries & Pilgrimages</h3>
+                    <p>Visit ancient monasteries like Rumtek, Pemayangtse, and Tashiding to experience spiritual serenity and Buddhist culture.</p>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <div class="activity-content">
+                    <div class="activity-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Lakes & Waterfalls</h3>
+                    <p>Discover pristine lakes like Tsomgo, Khecheopalri, and Gurudongmar, along with stunning waterfalls throughout the state.</p>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <div class="activity-content">
+                    <div class="activity-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Hill Stations</h3>
+                    <p>Relax in beautiful hill stations like Gangtok, Pelling, and Ravangla offering panoramic views and pleasant climates.</p>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <div class="activity-content">
+                    <div class="activity-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Wildlife Encounters</h3>
+                    <p>Explore rich biodiversity in national parks like Khangchendzonga, home to red pandas, snow leopards, and diverse bird species.</p>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <div class="activity-content">
+                    <div class="activity-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Village Tourism</h3>
+                    <p>Experience authentic Sikkimese culture by staying in traditional villages and learning about local customs and lifestyles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tourist Destinations Carousel -->
+        <h2 class="section-title">Top Tourist Destinations</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="gantok.webp" alt="Gangtok" class="carousel-img">
+                    <div class="carousel-caption">
+                        <h3>Gangtok</h3>
+                        <p>The capital city with stunning views of Kanchenjunga</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Tsomgo.webp" alt="Tsomgo Lake" class="carousel-img">
+                    <div class="carousel-caption">
+                        <h3>Tsomgo Lake</h3>
+                        <p>Sacred glacial lake at 12,400 feet altitude</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Nathula.png" alt="Nathula Pass" class="carousel-img">
+                    <div class="carousel-caption">
+                        <h3>Nathula Pass</h3>
+                        <p>Historic mountain pass on the Indo-China border</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Discover the Magic of Sikkim</h3>
+            <p>Plan your journey to this Himalayan paradise and experience memories that will last a lifetime.</p>
+            
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+            
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+            
+            <p>&copy; 2023 Incredible Sikkim Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navigation and Carousel -->
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+        
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            
+            const carousel = document.querySelector('.carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
+        
+        // Initialize carousel
+        document.querySelector('.carousel').style.transform = `translateX(0)`;
+    </script>
+
+</body>
+</html>

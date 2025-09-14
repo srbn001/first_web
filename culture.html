@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim Culture & Traditions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #E07A5F;
+            --secondary-color: #3D405B;
+            --accent-color: #81B29A;
+            --light-color: #F4F1DE;
+            --dark-color: #2D3047;
+            --spacing: 1rem;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9f7;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+            color: var(--secondary-color);
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.4rem;
+            margin-top: 2.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.2);
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 var(--spacing);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(20, 17, 17, 0.7);
+            color: #e89248;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .article-content {
+            flex: 2;
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .sidebar {
+            flex: 1;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: linear-gradient(to bottom, var(--secondary-color), var(--dark-color));
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 20px;
+            color: white;
+        }
+        
+        .toc h3 {
+            color: var(--light-color);
+            margin-top: 0;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .toc ul {
+            list-style: none;
+        }
+        
+        .toc li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+            color: white;
+        }
+        
+        .toc li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .toc a {
+            color: var(--light-color);
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+        
+        .toc a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        /* Culture Sections */
+        .culture-section {
+            margin-bottom: 3rem;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .culture-card {
+            background: var(--light-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .culture-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .culture-card-content {
+            padding: 1.5rem;
+        }
+        
+        .culture-card h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        
+        /* Blockquote */
+        blockquote {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-left: 5px solid var(--primary-color);
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+        }
+        
+        blockquote p {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+        
+        blockquote::before {
+            content: "'";
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            color: var(--primary-color);
+            position: absolute;
+            left: 10px;
+            top: -10px;
+            opacity: 0.3;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--secondary-color), var(--dark-color));
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .toc {
+                position: relative;
+                top: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation will be inserted here by new_nav.js -->
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="culture01.jpg" alt="Sikkim Culture" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">Sikkim Culture & Traditions</h1>
+            <p class="hero-subtitle">Discover the rich heritage, diverse traditions, and vibrant culture of the Himalayan kingdom</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Article Content -->
+            <div class="article-content">
+                <section id="history" class="culture-section">
+                    <h2>Origin and History of Sikkim</h2>
+                    <p>Sikkim has a rich and complex history dating back to the 13th century. The name Sikkim is believed to have been derived from the Limbu words "su him" meaning "new house". The kingdom was established in 1642 when Phuntsog Namgyal was consecrated as the first Chogyal (religious king) by three Tibetan lamas.</p>
+                    
+                    <div class="culture-grid">
+                        <div class="culture-card">
+                            <img src="Cultural1.webp" alt="Ancient Sikkim">
+                            <div class="culture-card-content">
+                                <h4>Ancient Era</h4>
+                                <p>Sikkim was originally inhabited by the Lepchas before the Bhutias and Nepalis migrated to the region.</p>
+                            </div>
+                        </div>
+                        <div class="culture-card">
+                            <img src="Cultural2.webp" alt="Monarchy Period">
+                            <div class="culture-card-content">
+                                <h4>Monarchy Period</h4>
+                                <p>The Namgyal dynasty ruled Sikkim for over 300 years until it became part of India in 1975.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Throughout its history, Sikkim maintained its independence despite pressures from neighboring Bhutan, Nepal, and Tibet. In the 19th century, it became a British protectorate, and after India's independence in 1947, Sikkim continued its status as a protectorate until it became the 22nd state of India in 1975.</p>
+                    
+                    <blockquote>
+                        <p>"Sikkim's history is a tapestry of diverse cultures, ancient traditions, and peaceful coexistence among different communities."</p>
+                    </blockquote>
+                </section>
+                
+                <section id="culture" class="culture-section">
+                    <h2>Cultural Diversity</h2>
+                    <p>Sikkim is a melting pot of diverse cultures, with three main ethnic groups: the Lepchas, Bhutias, and Nepalis. Each community has contributed to the rich cultural tapestry of the state.</p>
+                    
+                    <h3>Lepcha Culture</h3>
+                    <p>The Lepchas are the original inhabitants of Sikkim, with a distinct language, script, and cultural practices. They have a deep connection with nature and are known for their expertise in bamboo craft and weaving.</p>
+                    
+                    <h3>Bhutia Culture</h3>
+                    <p>The Bhutias migrated from Tibet in the 14th century and brought with them Tibetan Buddhism, which became the dominant religion. They are known for their vibrant festivals, traditional architecture, and Thangka paintings.</p>
+                    
+                    <h3>Nepali Culture</h3>
+                    <p>The Nepalis form the majority of Sikkim's population and have significantly influenced the state's culture, cuisine, and festivals. They celebrate various Hindu festivals with great enthusiasm.</p>
+                </section>
+                
+                <section id="traditions" class="culture-section">
+                    <h2>Traditional Practices</h2>
+                    <p>Sikkim's traditions are deeply rooted in its religious beliefs and connection to nature. These practices have been preserved through generations and continue to be an integral part of daily life.</p>
+                    
+                    <h3>Religious Practices</h3>
+                    <p>Buddhism and Hinduism are the main religions, with monasteries and temples serving as centers of spiritual and cultural activities. Prayer flags, mani walls, and chortens are common sights throughout the state.</p>
+                    
+                    <h3>Traditional Healing</h3>
+                    <p>Sikkim has a rich tradition of herbal medicine, with many households maintaining kitchen gardens of medicinal plants. The state is also known for its traditional healers, who use natural remedies.</p>
+                </section>
+                
+                <section id="food" class="culture-section">
+                    <h2>Culinary Delights</h2>
+                    <p>Sikkimese cuisine is a delightful blend of Tibetan, Nepali, and Lepcha influences, characterized by its simplicity, nutritional value, and unique flavors.</p>
+                    
+                    <div class="culture-grid">
+                        <div class="culture-card">
+                            <img src="Cultural3.webp" alt="Sikkimese Cuisine">
+                            <div class="culture-card-content">
+                                <h4>Staple Foods</h4>
+                                <p>Rice, maize, and buckwheat are staples, often accompanied by vegetables, meat, or dairy products.</p>
+                            </div>
+                        </div>
+                        <div class="culture-card">
+                            <img src="Cultural4.webp" alt="Traditional Dishes">
+                            <div class="culture-card-content">
+                                <h4>Popular Dishes</h4>
+                                <p>Momos, thukpa, gundruk, sinki, and phagshapa are some of the iconic dishes of Sikkim.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Beverages</h3>
+                    <p>Butter tea (chaang) is a traditional Bhutia drink, while local alcoholic beverages like raksi and tongba are popular during festivals and celebrations.</p>
+                </section>
+                
+                <section id="festivals" class="culture-section">
+                    <h2>Vibrant Festivals</h2>
+                    <p>Sikkim celebrates a multitude of festivals throughout the year, reflecting its diverse cultural heritage. These festivals are marked by colorful rituals, traditional dances, and community feasts.</p>
+                    
+                    <h3>Losar</h3>
+                    <p>The Tibetan New Year is celebrated with great enthusiasm by the Bhutia community. Monasteries are decorated, and cham dances are performed by monks wearing elaborate masks.</p>
+                    
+                    <h3>Dashain</h3>
+                    <p>This major Hindu festival is celebrated by the Nepali community with temple visits, animal sacrifices, and family gatherings.</p>
+                    
+                    <h3>Saga Dawa</h3>
+                    <p>This triple blessed festival commemorates the birth, enlightenment, and parinirvana of Buddha. Devotees visit monasteries, offer prayers, and engage in acts of generosity.</p>
+                    
+                    <h3>Pang Lhabsol</h3>
+                    <p>Unique to Sikkim, this festival was introduced by the third Chogyal to commemorate the sworn brotherhood between the Lepchas and Bhutias.</p>
+                </section>
+                
+                <section id="dress" class="culture-section">
+                    <h2>Traditional Dress</h2>
+                    <p>The traditional attire of Sikkim varies among different communities, each with its distinct style, colors, and significance.</p>
+                    
+                    <h3>Kho (Bakhu)</h3>
+                    <p>The traditional dress of Bhutias and Lepchas is a loose, long-sleeved gown tied at the neck and waist, usually made of thick woolen fabric.</p>
+                    
+                    <h3>Dumvun and Dumdyam</h3>
+                    <p>Lepcha women wear a two-piece dress called dumvun (blouse) and dumdyam (skirt), often with intricate patterns.</p>
+                    
+                    <h3>Nepali Traditional Wear</h3>
+                    <p>Nepali women wear colorful sarees or churidar-kurta with traditional jewelry, while men wear daura-suruwal or shirts with trousers.</p>
+                </section>
+                
+                <section id="language" class="culture-section">
+                    <h2>Language and Literature</h2>
+                    <p>Sikkim is a multilingual state with eleven official languages, including Nepali, Sikkimese (Bhutia), Lepcha, and English.</p>
+                    
+                    <h3>Nepali</h3>
+                    <p>Nepali is the lingua franca of Sikkim and is spoken by the majority of the population.</p>
+                    
+                    <h3>Sikkimese (Bhutia)</h3>
+                    <p>This Tibetan dialect is spoken by the Bhutia community and uses the Tibetan script.</p>
+                    
+                    <h3>Lepcha</h3>
+                    <p>The Lepcha language has its own unique script and is considered one of the oldest languages of the region.</p>
+                </section>
+            </div>
+            
+            <!-- Sidebar with Table of Contents -->
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#history">Origin and History</a></li>
+                        <li><a href="#culture">Cultural Diversity</a></li>
+                        <li><a href="#traditions">Traditional Practices</a></li>
+                        <li><a href="#food">Culinary Delights</a></li>
+                        <li><a href="#festivals">Vibrant Festivals</a></li>
+                        <li><a href="#dress">Traditional Dress</a></li>
+                        <li><a href="#language">Language and Literature</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Sikkim</h3>
+                    <p>Sikkim is a beautiful state in northeastern India, known for its biodiversity, stunning landscapes, and rich cultural heritage.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Explore More</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#food">Food</a></li>
+                        <li><a href="#festivals">Festivals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>Email: info@sikkimculture.com</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>Address: Gangtok, Sikkim, India</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Sikkim Cultural Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Navigation Script -->
+    <script src="new_nav.js"></script>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

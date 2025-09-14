@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Buddhism in Sikkim</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #8E7C68;
+            --secondary-color: #D8CEBF;
+            --accent-color: #6B5B48;
+            --text-color: #333;
+            --light-color: #f8f8f8;
+            --dark-color: #2c2c2c;
+            --spacing: 1rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+            --header-height: 70px;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            padding-top: var(--header-height);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+            color: var(--secondary-color);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 2.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            height: var(--header-height);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--header-height);
+        }
+        
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.8rem;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 var(--spacing);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(244, 240, 240, 0.403);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(249, 239, 239, 0.5);
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .article-content {
+            flex: 2;
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .sidebar {
+            flex: 1;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-widget {
+            background: white;
+            padding: 1.8rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-widget h3 {
+            margin-top: 0;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+        
+        .monastery-list {
+            list-style: none;
+        }
+        
+        .monastery-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .monastery-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-caption {
+            padding: 1rem;
+            background: white;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        /* Blockquote */
+        blockquote {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        blockquote p {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!-- <header>
+        <div class="container"> -->
+            <!-- <nav>
+                <a href="index.html" class="logo">Sikkim Buddhism</a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button> -->
+                <!-- <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#monasteries">Monasteries</a></li>
+                    <li><a href="#festivals">Festivals</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul> -->
+            <!-- </nav> -->
+        <!-- </div>
+    </header> -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="history1.jpeg" alt="Buddhist Monastery in Sikkim" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">Buddhism in Sikkim</h1>
+            <p class="hero-subtitle">Exploring the rich spiritual heritage and cultural significance of Buddhism in the Himalayan kingdom of Sikkim</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Article Content -->
+            <div class="article-content">
+                <section id="history">
+                    <h2>History of Buddhism in Sikkim</h2>
+                    <p>Buddhism was introduced to Sikkim around the 8th century by the revered Buddhist saint Guru Rinpoche (Padmasambhava), who is said to have blessed the land and predicted the establishment of Buddhism in the region. However, it was in the 17th century that Buddhism became firmly established with the arrival of three Tibetan lamas who consecrated Phuntsog Namgyal as the first Chogyal (religious king) of Sikkim in 1642.</p>
+                    
+                    <div class="image-gallery">
+                        <div class="gallery-item">
+                            <img src="Buddhism_history1.webp" alt="Ancient Buddhist Scriptures">
+                            <div class="gallery-caption">Ancient Buddhist scriptures preserved in Sikkim</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="Buddhism_history2.png" alt="Prayer Wheels">
+                            <div class="gallery-caption">Prayer wheels at Rumtek Monastery</div>
+                        </div>
+                    </div>
+                    
+                    <p>The Nyingma and Kagyu schools of Tibetan Buddhism were predominant in the early years. In the 18th and 19th centuries, many monasteries were established throughout Sikkim, becoming centers of learning, culture, and spiritual practice. Following the Chinese occupation of Tibet in the 1950s, many Tibetan lamas sought refuge in Sikkim, further enriching the Buddhist traditions in the region.</p>
+                    
+                    <blockquote>
+                        <p>"Sikkim is a hidden jewel of Vajrayana Buddhism, where ancient traditions are preserved and practiced with devotion."</p>
+                    </blockquote>
+                    
+                    <p>Today, Buddhism is an integral part of Sikkimese culture and identity, with the majority of the population practicing this ancient religion. The state government actively supports the preservation and promotion of Buddhist heritage, recognizing its importance to the cultural fabric of Sikkim.</p>
+                </section>
+                
+                <section id="monasteries">
+                    <h2>Famous Monasteries of Sikkim</h2>
+                    <p>Sikkim is home to over 200 monasteries, each with its own unique history and spiritual significance. These gompas (monasteries) are not just places of worship but also centers of learning, art, and culture.</p>
+                    
+                    <h3>Rumtek Monastery</h3>
+                    <p>Often called the 'Dharma Chakra Centre', Rumtek is one of the most significant monasteries in Sikkim. It is the seat of the Karmapa, the head of the Karma Kagyu school. Established in the 16th century, it was rebuilt in the 1960s and houses some of the rarest Buddhist religious artifacts.</p>
+                    
+                    <h3>Pemayangtse Monastery</h3>
+                    <p>One of the oldest monasteries in Sikkim, Pemayangtse was established in 1705 and belongs to the Nyingma school. The monastery is famous for its seven-tiered wooden structure depicting the heavenly abode of Guru Rinpoche.</p>
+                    
+                    <h3>Tashiding Monastery</h3>
+                    <p>Perched on a hilltop between the Rathong and Rangeet rivers, Tashiding is considered one of the holiest monasteries in Sikkim. The sacred 'Bhumchu' ceremony held here annually attracts thousands of devotees.</p>
+                </section>
+                
+                <section id="festivals">
+                    <h2>Buddhist Festivals of Sikkim</h2>
+                    <p>The Buddhist calendar in Sikkim is marked by numerous festivals that celebrate the teachings of Buddha, important events in Buddhist history, and the changing seasons.</p>
+                    
+                    <h3>Losar</h3>
+                    <p>Losar is the Tibetan New Year celebration, marked by prayers, rituals, and feasting. Monasteries are adorned with colorful decorations, and cham dances (religious mask dances) are performed by monks.</p>
+                    
+                    <h3>Saga Dawa</h3>
+                    <p>This triple blessed festival commemorates the birth, enlightenment, and parinirvana of Buddha. Devotees visit monasteries, offer prayers, and engage in acts of generosity.</p>
+                    
+                    <h3>Pang Lhabsol</h3>
+                    <p>Unique to Sikkim, this festival was introduced by the third Chogyal to commemorate the sworn brotherhood between the Lepchas and Bhutias. It also honors Mount Kanchenjunga, the guardian deity of Sikkim.</p>
+                </section>
+                
+                <section id="articles">
+                    <h2>Featured Articles</h2>
+                    <h3>The Influence of Tibetan Buddhism on Sikkimese Culture</h3>
+                    <p>Explore how Tibetan Buddhism has shaped the art, architecture, literature, and social customs of Sikkim over centuries.</p>
+                    
+                    <h3>Meditation Practices in Sikkimese Buddhism</h3>
+                    <p>Learn about the various meditation techniques practiced in Sikkim's monasteries and their significance in the spiritual path.</p>
+                    
+                    <h3>Preservation of Ancient Buddhist Texts in Sikkim</h3>
+                    <p>Discover how Sikkim has become a repository for rare Buddhist manuscripts and the efforts to preserve this literary heritage.</p>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>Major Monasteries</h3>
+                    <ul class="monastery-list">
+                        <li>Rumtek Monastery</li>
+                        <li>Pemayangtse Monastery</li>
+                        <li>Tashiding Monastery</li>
+                        <li>Enchey Monastery</li>
+                        <li>Phodong Monastery</li>
+                        <li>Ralang Monastery</li>
+                        <li>Dubdi Monastery</li>
+                        <li>Lachen Monastery</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Important Festivals</h3>
+                    <ul class="monastery-list">
+                        <li>Losar (Tibetan New Year)</li>
+                        <li>Saga Dawa</li>
+                        <li>Pang Lhabsol</li>
+                        <li>Drupka Teshi</li>
+                        <li>Lhabab Duechen</li>
+                        <li>Bumchu Festival</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Buddhist Schools in Sikkim</h3>
+                    <ul class="monastery-list">
+                        <li>Nyingma (Ancient School)</li>
+                        <li>Kagyu (Oral Lineage)</li>
+                        <li>Sakya (Grey Earth)</li>
+                        <li>Gelug (Virtuous School)</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Visitor Information</h3>
+                    <p>Most monasteries are open to visitors throughout the year. Remember to dress modestly, remove shoes before entering prayer halls, and always ask for permission before taking photographs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Dedicated to preserving and sharing the rich Buddhist heritage of Sikkim through education and cultural exchange.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#monasteries">Monasteries</a></li>
+                        <li><a href="#festivals">Festivals</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@sikkimbuddhism.org</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>Address: Gangtok, Sikkim, India</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Sikkim Buddhism Heritage Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="new_nav.js"></script>
+</body>
+</html>

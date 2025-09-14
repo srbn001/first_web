@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Sikkim</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Navbar will load here -->
+  <div id="navbar-container"></div>
+
+  <!-- Floating Home Button (initially hidden) -->
+  <a href="index.html" class="floating-home-btn" style="display: none;">
+    <i class="fas fa-home"></i>
+  </a>
+
+  <!-- Hero Section with Carousel -->
+  <section class="hero">
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="main.webp" alt="Sikkim Landscape 1" class="hero-img">
+        </div>
+        <div class="carousel-item">
+          <img src="main1.jpeg" alt="Sikkim Landscape 2" class="hero-img">
+        </div>
+        <div class="carousel-item">
+          <img src="main2.jpeg" alt="Sikkim Landscape 3" class="hero-img">
+        </div>
+        <div class="carousel-item">
+          <img src="main3.jpeg" alt="Sikkim Landscape 4" class="hero-img">
+        </div>
+        <div class="carousel-item">
+          <img src="main5.jpeg" alt="Sikkim Landscape 5" class="hero-img">
+        </div>
+      </div>
+    </div>
+    <div class="hero-overlay">
+      <div class="hero-text">
+        Welcome to Sikkim
+      </div>
+    </div>
+  </section>
+
+  <!-- Monastery Introduction Section -->
+  <section class="intro-section">
+    <div class="container">
+      <h2>Monasteries of Sikkim</h2>
+      <div class="intro-content">
+        <div class="intro-text">
+          <p>Nestled in the majestic Himalayas, Sikkim's monasteries are spiritual havens that offer a unique glimpse into Tibetan Buddhism. These sacred sites are not just places of worship but living museums of ancient art, culture, and traditions.</p>
+          
+          <p>What makes Sikkim's monasteries special is their perfect harmony with nature - perched on hilltops, nestled in valleys, or surrounded by forests, each offering breathtaking views and serene atmospheres. The intricate murals, ancient scriptures, and magnificent architecture tell stories of a rich spiritual heritage dating back centuries.</p>
+          
+          <p>Visitors are always welcome to experience the peaceful chanting of monks, witness colorful prayer flags fluttering in the mountain breeze, and participate in meditation sessions. These monasteries are famous for their preservation of Vajrayana Buddhism and host spectacular festivals like Losar and Saga Dawa that attract pilgrims and tourists from around the world.</p>
+          
+          <p>Whether you seek spiritual enlightenment, cultural immersion, or simply awe-inspiring beauty, Sikkim's monasteries offer an unforgettable journey into the heart of the Himalayas.</p>
+        </div>
+        <div class="intro-image">
+          <img src="buddha2.jpg" alt="Buddha Statue">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Monasteries Section -->
+  <section class="popular-monasteries">
+    <div class="container">
+      <h2>Popular Monasteries of Sikkim</h2>
+      <div class="monastery-carousel">
+        <button class="carousel-control prev" id="prevBtn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-container" id="carouselContainer">
+          <div class="monastery-list" id="monasteries"></div>
+        </div>
+        <button class="carousel-control next" id="nextBtn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Page Container (initially hidden) -->
+  <section id="detailPage" class="detail-page" style="display: none;">
+    <!-- Content will be loaded dynamically -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Sikkim Tourism Logo">
+        </div>
+        <div class="footer-info">
+          <h3>About Us</h3>
+          <p>We are dedicated to promoting the beauty and culture of Sikkim, helping travelers discover the spiritual and natural wonders of this Himalayan paradise. Our mission is to provide authentic experiences that connect visitors with Sikkim's rich heritage and warm hospitality.</p>
+          <p>Contact us: info@sikkimtourism.com | +91 9876543210</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Sikkim Tourism. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="new_nav.js"></script>
+</body>
+</html>
